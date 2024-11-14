@@ -46,8 +46,10 @@ with st.sidebar.expander('Option 1: Upload CSV file containing traffic details.'
 with st.sidebar.expander('Option 2: Fill out Form', expanded=False):
     st.write('Enter the traffic details manually using the form below:')
     with st.form(key='traffic_form'):
-        holiday = st.selectbox('Choose whether today is a designated holiday or not', options = ['Columbus Day', 'Veterans Day', 'Thanksgiving Day',
+        holiday = st.selectbox('Choose whether today is a designated holiday or not', options = ['None','Columbus Day', 'Veterans Day', 'Thanksgiving Day',
        'Christmas Day', 'New Years Day', 'Washingtons Birthday','Memorial Day', 'Independence Day', 'State Fair', 'Labor Day','Martin Luther King Jr Day'])
+        if holiday == 'None':
+            holiday = None
         temp = st.number_input('Average temperaure in Kelvin', min_value =0.0, max_value=330.0, value = 290.0)
         rain = st.number_input('Amount of mm of rain that occurs in the hour', min_value =0.0, max_value=10000.0, value = 0.0)
         snow = st.number_input('Amount of mm of snow that occurs in the hour', min_value =0.0, max_value=1.0, value = 0.0)
