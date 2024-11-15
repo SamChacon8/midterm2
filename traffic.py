@@ -81,7 +81,7 @@ if df is None:
     encode_df = encode_df.drop(columns=['traffic_volume'])
 
     # Combine the list of user data as a row to default_df
-    # encode_df.loc[len(encode_df)] = [carat, depth, table, x, y, z, cut, color, clarity]
+    
     encode_df.loc[len(encode_df)] = [holiday, temp, rain, snow, cloud, weather, month, day, hour]
 
     # Create dummies for encode_df
@@ -150,7 +150,7 @@ elif df is not None:
     st.write(f"## Prediction Results with a {(1-alpha_v)*100}% Confidence Interval")
     st.write(input_df)
 
-# Additional tabs for DT model performance
+# Additional tabs for model performance
 st.subheader("Model Insights")
 tab1, tab2, tab3, tab4 = st.tabs(["Feature Importance", 
                             "Histogram of Residuals", 
